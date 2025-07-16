@@ -27,6 +27,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-@$v_kqm12gi7g1d90q2zd
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [
+    'https://simplestudent-b0f3dmg8bzf8bmcs.southindia-01.azurewebsites.net',
+    'http://simplestudent-b0f3dmg8bzf8bmcs.southindia-01.azurewebsites.net',
+]
 
 
 # Application definition
