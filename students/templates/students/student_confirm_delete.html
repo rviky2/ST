@@ -1,0 +1,25 @@
+{% extends 'students/base.html' %}
+
+{% block title %}Delete Student{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h2>Delete Student</h2>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-danger">
+            <p>Are you sure you want to delete the student <strong>{{ student.first_name }} {{ student.last_name }}</strong> ({{ student.registration_number }})?</p>
+            <p>This action cannot be undone.</p>
+        </div>
+        
+        <form method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a href="{% url 'student-detail' student.id %}" class="btn btn-secondary me-md-2">Cancel</a>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %} 
